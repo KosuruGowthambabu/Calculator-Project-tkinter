@@ -1,0 +1,68 @@
+from tkinter import *
+import ast
+
+root=Tk()
+
+i=0
+def display_numbers(num):
+    global i
+    display.insert(i,num)
+    i+=1
+
+def display_operators(op):
+    global i
+    display.insert(i,op)
+    i+=len(op)
+
+def clear_all():
+    display.delete(0,END)
+
+def undo():
+    entry_str = display.get()
+    clear_all()
+    display.insert(0, entry_str[0:-1])
+
+
+def calculate():
+    entry_str=display.get()
+    clear_all()
+    try:
+        node=ast.parse(entry_str,mode='eval')
+        result=eval(compile(node,'<string>','eval'))
+        display.insert(0,result)
+    except Exception:
+        display.insert(0,'Error')    
+
+display=Entry(root)
+display.grid(columnspan=6)
+
+count=1
+for i in range(3):
+    for j in range(3):
+        button=Button(root,text=count,width=4,height=2,command=lambda num=count:display_numbers(num))
+        button.grid(row=i+1,column=j)
+        count+=1
+
+button=Button(root,text='0',width=4,height=2,command=lambda num=0:display_numbers(num))
+button.grid(row=4,column=1)
+
+operators=['+','-','*','/','**',' .','(',')']
+counter=0
+for i in range(4):
+    for j in range(2):
+        if counter<len(operators):
+            button=Button(root,text=operators[counter],width=4,height=2,
+                          command=lambda op=operators[counter]:display_operators(op))
+            if operators[counter]==')':
+                button.grid(row=i+1,column=j+4)
+            else:
+                button.grid(row=i+1,column=j+3)
+            counter+=1
+
+Button(root,text='AC',width=4,height=2,command=clear_all).grid(row=4,column=0)
+
+Button(root,text='Del',width=4,height=2,command=undo).grid(row=4,column=2)
+
+Button(root,text='=',width=4,height=2,command=calculate).grid(row=4,column=3)
+
+root.mainloop()  
