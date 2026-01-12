@@ -1,4 +1,4 @@
-Project Title
+Project Title 
 
 Python Calculator Application using Tkinter
 
@@ -39,7 +39,7 @@ Clear (AC) and Delete (DEL) options
 Error handling for invalid input
 
 Technologies Used
-
+ 
 Python
 
 Tkinter
