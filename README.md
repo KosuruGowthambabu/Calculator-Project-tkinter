@@ -1,4 +1,4 @@
-Project Title 
+Project Title
 
 Python Calculator Application using Tkinter
 
