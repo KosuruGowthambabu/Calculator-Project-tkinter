@@ -4,42 +4,58 @@ Python Calculator Application using Tkinter
 
 Description
 
-A GUI-based calculator application developed using Python and Tkinter that performs arithmetic operations and evaluates expressions safely.
+GUI-based calculator built using Python
+
+Developed with Tkinter for desktop use
+
+Safely evaluates mathematical expressions
 
 Objectives
 
-Create a desktop calculator using Tkinter
+Build a calculator using Python GUI
 
-Perform mathematical calculations through a GUI
+Understand Tkinter widgets and events
 
-Handle user input and errors effectively
+Perform arithmetic operations
 
 Uses
 
-Performing basic and advanced mathematical calculations
+Perform daily calculations
 
-Desktop calculator for students and beginners
+Useful for students and beginners
 
-Learning Python GUI development
+Learn Python GUI programming
 
-Understanding event-driven programming
+Practice event-driven programming
 
 Features
 
-Graphical user interface
+Simple and user-friendly interface
 
-Basic arithmetic operations
+Supports +, −, ×, ÷ operations
 
-Power operation (**)
+Power calculation (**)
 
 Brackets and decimal support
 
-Clear (AC) and Delete (DEL) options
+AC (Clear All) option
 
-Error handling for invalid input
+DEL (Delete last input) option
+
+Displays error for invalid input
+
+Output
+
+Displays entered numbers and operators
+
+Shows calculated result on screen
+
+Displays “Error” for invalid expressions
+
+Real-time update of input and output
 
 Technologies Used
- 
+
 Python
 
 Tkinter
